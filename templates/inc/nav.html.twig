@@ -1,0 +1,17 @@
+<nav class="navbar">
+<ul>
+    <li><a href="{{ path('main_home') }}" title="Home">Home</a></li>
+
+    {% if app.user %}
+    <li><a href="{{ path('wish_create') }}" title="Add your own ideas!">Add yours!</a></li>
+    {% endif %}
+    <li><a href="{{ path('main_about_us') }}" title="About_us">About us</a></li>
+    <li><a href="{{ path('wish_list') }}" title="all things to do">All wishes</a></li>
+    {% if app.user %}
+    <li><a href="{{ path('app_logout') }}" title="Lougout">Logout (Hello {{ app.user.pseudo }})</a></li>
+    {% else %}
+        <li><a href="{{ path('app_register') }}" title="Create your account">Register</a></li>
+        <li><a href="{{ path('app_login') }}" title="Login">Login</a></li>
+    {% endif %}
+</ul>
+</nav>
